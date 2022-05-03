@@ -1,0 +1,309 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="" rel="stylesheet">
+  <title>Shree Driving School</title>
+  <link rel="icon" href="{% static 'images/logo_dark.png' %}" type="image/x-icon">
+</head>
+
+<body>
+  <form action='/' method="post">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Shree Driving School</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'homepage'%}">
+                <h5>Home</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'booking'%}">
+                <h5>Book Slot</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fileupload' %}">
+                <h5>Upload Documents</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/services.html">
+                <h5>About Us</h5>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="http://127.0.0.1:5500/services2.html" target="blank">
+                <h5>Services</h5>
+              </a>
+            </li>
+           
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout'%}">
+                <h5>Logout</h5>
+              </a>
+            </li>
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login'%}">
+                <h5>Login</h5>
+              </a>
+            </li>
+            {% endif %}
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li> -->
+          </ul>
+
+        </div>
+        <div class="abc">
+
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo_dark.png' %}" alt="" width="120" height="50"
+              class="d-inline-block align-text-top"><br>
+            <!-- Shree Driving School -->
+          </a>
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          </button>
+        </div>
+      </div>
+    </nav>
+
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/image20.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Learn from the Professionals</h1>
+            <p>Learn Driving from one of the best teachers with many years of experience in guiding and training newbies
+              into well-trained drivers</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/image12.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>All types of Licences available </h1>
+            <p>From two-wheeler, four-wheeler, RC Book, you name it, we provide all RTO related documents and services
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/image912.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>No hefty paperwork</h1>
+            <p>No running around offices for hours, all the paper work is done from our side, so that you don't have to
+              waste your time in long boring lines</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Container Features-->
+
+
+    <div class="container marketing my-5">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="{% static 'images/image15.jpg' %}" alt="Generic placeholder image"
+            width="140" height="140">
+          <h2>Car Provided</h2>
+          <p>You can bring your own vehicle or we will provide it for you, choose from various options for the best ride
+            that suits you</p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="{% static 'images/driving5.jpg' %}" alt="Generic placeholder image"
+            width="140" height="140">
+          <h2>No hefty paperwork</h2>
+          <p>No running around offices for hours, all the paper work is done from our side, so that you don't have to
+            waste your time in long boring lines</p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="{% static 'images/driving2.jpg' %}" alt="Generic placeholder image"
+            width="140" height="140">
+          <h2>Whenever You Want</h2>
+          <p>With flexible timing schedules, choose the time slot according to your convinience<br></p>
+          <p><a class="btn btn-secondary my-4" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+
+
+      <!-- /END THE FEATURETTES -->
+
+    </div>
+
+
+    <div class="container my-5">
+      <div class="row c-gutter-50 mobile-padding-normal">
+        <div class="divider-70 divider-xl-90"></div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+          <h3 class="counter-wrap color-main">
+            <span class="counter1"><i class="fa fa-users" aria-hidden="true"></i>
+            </span>
+            <span class="counter1">WE</span>
+
+          </h3>
+
+          <p>TRAIN ALL AGES</p>
+        </div>
+
+        <div class="divider-40 d-sm-block d-md-none"></div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+          <h3 class="counter-wrap color-main">
+            <span class="counter1"><i class="fa fa-shield" aria-hidden="true"></i>
+            </span>
+            <span class="counter counted" data-from="0" data-to="99" data-speed="2500">99</span>
+            <span class="counter-add">%</span>
+          </h3>
+
+          <p>PASS RATES</p>
+        </div>
+
+        <div class="divider-40 d-md-block d-lg-none "></div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+
+          <h3 class="counter-wrap color-main">
+            <span class="counter1"><i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+            <span class="counter counted" data-from="0" data-to="10" data-speed="3000">10</span>
+          </h3>
+
+          <p>WORKING YEARS </p>
+        </div>
+
+        <div class="divider-40 d-sm-block d-md-none"></div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 text-center">
+          <h3 class="counter-wrap color-main">
+            <span class="counter1"><i class="fa fa-id-card" aria-hidden="true"></i>
+            </span>
+            <span class="counter counted" data-from="0" data-to="5000" data-speed="2800">5000</span>
+            <span class="counter-add">+</span>
+          </h3>
+
+          <p>LICENSES ISSUED</p>
+        </div>
+
+        <div class="divider-80 divider-xl-100"></div>
+      </div>
+    </div>
+
+    <!-- Contact Us-->
+
+
+    <div class="container my-3">
+      <p class="text-center"><strong>Contact Us</strong></p>
+      <p class="text-center">Mobile No - 9881127943</p>
+      <p class="text-center">shreedrivingschool@gmail.com</p>
+    </div>
+
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
+
+        <a href="/"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+      </footer>
+    </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </form>
+</body>
+
+</html>

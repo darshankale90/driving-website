@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1">
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+	</script>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+	</script>
+
+	<link href=
+"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+		rel="stylesheet" type="text/css" />
+
+	<script>
+		function showDate(input){
+	$('#div').html(input.value);
+
+	const d = new Date(input.value);
+	let day = d.getDay()
+
+	document.getElementById("demo").innerHTML = day;
+}
+
+	</script>
+</head>
+	
+<body>
+	<input type = "date"
+		onchange="showDate(this)" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-01-07" >
+        <div id="div"></div>
+        <div id="demo"></div>
+
+</body>
+</html>
